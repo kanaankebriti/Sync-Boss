@@ -86,10 +86,10 @@ int main()
 			// key combos
 			if (keyboard_state[SDL_SCANCODE_1] && keyboard_state[SDL_SCANCODE_2])
 			{
-				swap_cups(&cup[0], &cup[1]);
+				swap_cups(&cup[0], &cup[1], 2);
 				key_down = true;
 			}
-			else if (keyboard_state[SDL_SCANCODE_1] && keyboard_state[SDL_SCANCODE_3])
+			/*else if (keyboard_state[SDL_SCANCODE_1] && keyboard_state[SDL_SCANCODE_3])
 			{
 				swap_cups(&cup[0], &cup[2]);
 				key_down = true;
@@ -98,7 +98,7 @@ int main()
 			{
 				swap_cups(&cup[1], &cup[2]);
 				key_down = true;
-			}
+			}*/
 			break;
 
 		case SDL_KEYUP:
@@ -113,6 +113,7 @@ int main()
 		// render
 		render_clear(renderer, 40, 190, 100);
 		render_cups(renderer, cup, 2, texture_bank);
+
 	}
 
 	// free up memory
@@ -121,7 +122,6 @@ int main()
 		SDL_DestroyTexture(texture_bank[i]);
 		texture_bank[i] = NULL;
 	}
-	free(texture_bank);
 	kill_sdl(renderer, main_window);
 
 	#ifdef _DEBUG

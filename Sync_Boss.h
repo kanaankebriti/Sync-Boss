@@ -31,6 +31,7 @@
 #define FOUR_COL_SLOT_3_X 630
 #define ANIM_MV_R 0
 #define ANIM_MV_L 1
+#define SWAP_X_SPEED 20
 
 struct cup
 {
@@ -45,4 +46,4 @@ bool init_sdl(SDL_Renderer** renderer, SDL_Window** window);
 void kill_sdl(SDL_Renderer* renderer, SDL_Window* main_window);
 void render_clear(SDL_Renderer* renderer, unsigned char r, unsigned char b, unsigned char g);
 void render_cups(SDL_Renderer* renderer, cup* cup, unsigned char num_of_cups, SDL_Texture* texture_bank[]);
-void swap_cups(cup* cup_a, cup* cup_b);
+void swap_cups(cup* cup_a, cup* cup_b, unsigned char num_of_slots);
